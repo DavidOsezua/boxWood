@@ -1,0 +1,27 @@
+.footerSection {
+  background-color: #0c0e10;
+  color: #fff;
+  min-height: 100%;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.firstCol > * + * {
+  margin-top: 1rem;
+}
+
+.secondContent > * + * {
+  margin-top: 1rem;
+}
+
+.thirdCol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}

@@ -1,0 +1,12 @@
+.logo {
+  padding: 0.5rem 1.5rem;
+  color: #ffce53;
+  background: #1b1725;
+}
+
+.logoInverted {
+  padding: 01rem 1.5rem;
+  width: 200px;
+  color: #1b1725;
+  background: #ffce53;
+}

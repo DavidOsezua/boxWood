@@ -1,0 +1,33 @@
+.overviewSection {
+  background-color: #f8f8f8;
+}
+
+.overviewContainer > * + * {
+  margin-top: 1rem;
+}
+
+.text {
+  font-weight: 300;
+  text-align: left;
+
+  color: #1b1725;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 58px;
+
+  color: #1b1725;
+}
+@media screen and (min-width: 913px) {
+  .overviewContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .text {
+    width: 90%;
+  }
+}

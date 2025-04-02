@@ -1,0 +1,8 @@
+@media screen and (min-width: 913px) {
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+}

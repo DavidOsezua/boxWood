@@ -1,0 +1,19 @@
+.card {
+  position: relative;
+  /* max-width: 1000px; */
+  background: #1b1725;
+  /* border-radius: 16px; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}

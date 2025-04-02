@@ -1,0 +1,42 @@
+.heroSection {
+  background-color: #f8f8f8;
+}
+
+.imageContainer {
+  /* max-width: 565px; */
+}
+
+.btn {
+  /* Button 3 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 20px;
+  gap: 16px;
+  color: #fff;
+  background: #1b1725;
+  border-radius: 6px;
+}
+
+.servicesHero > * + * {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 913px) {
+  .servicesHero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .servicesHero > * + * {
+    margin-top: 0rem;
+  }
+  .mdText {
+    width: 80%;
+  }
+}

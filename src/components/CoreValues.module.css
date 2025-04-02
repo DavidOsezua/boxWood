@@ -1,0 +1,26 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  height: 300px;
+
+  background: #1b1725;
+  border: 1px solid #cecece;
+  border-radius: 10px;
+  position: relative;
+  color: #fff;
+}
+
+.number {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  left: 0px;
+  top: 0px;
+
+  color: #fff;
+  background: #ff3344;
+}

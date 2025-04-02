@@ -1,0 +1,18 @@
+.firmSection {
+  background-color: #f8f8f8;
+}
+
+.firmContainer {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  /* justify-content: space-between; */
+}
+
+.image {
+  max-width: 150px;
+  margin: 0 auto;
+}

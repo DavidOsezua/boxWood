@@ -1,0 +1,26 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: #f9f9f9;
+
+  height: 546px;
+  padding: 3rem 1rem 2rem 1rem;
+  background: #f9f9f9;
+  border: 1px solid #cecece;
+  box-shadow: -4px 4px 5px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 17px;
+}
+
+.card > * + * {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 375px) {
+  .cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}

@@ -33,10 +33,10 @@ const OurCompany = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
           >
-            Boxwood Capital is a trusted Eastcheap, London-based firm
-            specializing in investment fraud recovery. Our team of legal experts
-            and fraud lawyers is dedicated to helping clients recover money lost
-            through online trading and investments.
+            Boxwood Capital Limited is a trusted London-based firm specializing
+            in investment fraud recovery. Our team of legal experts and fraud
+            lawyers is dedicated to helping clients recover money lost through
+            online trading and investments.
           </motion.p>
 
           <NavLink to={`/aboutus`}>

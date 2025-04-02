@@ -17,8 +17,8 @@ const Footer = () => {
 
           <p className="text-[0.8rem] leading-5">
             Boxwood Capital is a trading name of Boxwood Capital Limited,
-            registered in England and Wales: Eastcheap, London, England, EC3M1EU
-            Incorporated on: 31 July 2012, entity number 08161981
+            registered in London, England, W1F 9RJ Incorporated on: 14 July
+            2019, entity number 12156964
           </p>
 
           <p className="text-[0.6rem] leading-4">
@@ -41,7 +41,7 @@ const Footer = () => {
             <div>
               <p className="text-[1rem] font-bold">Registered Office:</p>
               <p className="text-[0.8rem]">
-                2nd Floor 22 Eastcheap, London, England, EC3M 1EU
+                46/48, Beak Street, London, England, W1F 9RJ
               </p>
             </div>
 

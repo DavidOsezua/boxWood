@@ -39,7 +39,7 @@ const ContactUs = () => {
           <div>
             <p className="font-bold pb-[0.5rem]">Location</p>
             <p className="text-[0.8rem]">
-              2nd Floor 22 Eastcheap, London, England
+              46/48, Beak Street, London, England, W1F 9RJ
             </p>
           </div>
         </div>

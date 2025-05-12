@@ -22,7 +22,7 @@ const ContactUs = () => {
 
           <div className="">
             <p className="font-bold pb-[0.5rem]">Phone Number</p>
-            <p className="text-[0.8rem]"> 0207 126 8321</p>
+            <p className="text-[0.8rem]">+ 1 (833) 3074417</p>
           </div>
         </div>
         <div className="flex gap-3 items-center">

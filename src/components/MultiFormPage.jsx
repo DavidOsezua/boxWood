@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import useMultistepForm from "../hooks/useMultistepForm";
-import ProgressBar from "./Progressbar";
+
 import Button from "./Button";
 import styles from "./MultiFormPage.module.css";
+import ProgressBar from "./Progressbar";
 
 const MultiFormPage = ({
   stepContent,
@@ -11,13 +12,6 @@ const MultiFormPage = ({
   containerClass,
   onSubmit,
   validateStep,
-  showPageHeader = true,
-  headerText,
-  showTipJar = true,
-  formHeaderText,
-  isSubmitted,
-  error,
-  setError,
 }) => {
   const { steps, currentStep, next, step, stepNames, previous, goToStep } =
     useMultistepForm(stepContent);

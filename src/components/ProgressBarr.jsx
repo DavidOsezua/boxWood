@@ -3,11 +3,13 @@ import React, { useState } from "react";
 
 const ProgressBar = ({
   steps,
-  currentProgress = 1,
+  currentProgress = 0,
   onStepClick = null,
   className = "",
 }) => {
-  const percentage = currentProgress * 100;
+  const percentage = currentProgress  * 100;
+
+  console.log(percentage)
 
   return (
     <div className={`w-full max-w-md mx-auto ${className}`}>

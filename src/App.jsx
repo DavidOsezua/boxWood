@@ -9,15 +9,13 @@ import FormPage from "./pages/FormPage";
 const App = () => {
   return (
     <BrowserRouter>
-     
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="aboutus" element={<Aboutus />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="ourservices" element={<Ourservices />} />
-          <Route path="form" element={<FormPage />} />
-        </Routes>
-    
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="aboutus" element={<Aboutus />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="ourservices" element={<Ourservices />} />
+        <Route path="form" element={<FormPage />} />
+      </Routes>
     </BrowserRouter>
   );
 };

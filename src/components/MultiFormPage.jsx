@@ -4,7 +4,7 @@ import useMultistepForm from "../hooks/useMultistepForm";
 
 import Button from "./Button";
 import styles from "./MultiFormPage.module.css";
-import ProgressBar from "./Progressbar";
+import ProgressBar from "./ProgressBarr";
 
 const MultiFormPage = ({
   stepContent,

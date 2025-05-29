@@ -2,11 +2,11 @@ import React from "react";
 
 const FormOne = () => {
   return (
-    <div className="shadow-md rounded-md">
+    <div className="">
       <form className="space-y-4">
         {/* Full Name */}
         <div>
-          <label className="block mb-1 text-sm font-medium text-gray-700">
+          <label className="block mb-1 text-[0.7rem] md:text-sm font-medium text-gray-700">
             Full name
           </label>
           <input
@@ -18,7 +18,7 @@ const FormOne = () => {
 
         {/* Mobile Number */}
         <div>
-          <label className="block mb-1 text-sm font-medium text-gray-700">
+          <label className="block mb-1 text-[0.7rem] md:text-sm font-medium text-gray-700">
             Mobile number
           </label>
           <input
@@ -30,7 +30,7 @@ const FormOne = () => {
 
         {/* Email */}
         <div>
-          <label className="block mb-1 text-sm font-medium text-gray-700">
+          <label className="block mb-1 text-[0.7rem] md:text-sm font-medium text-gray-700">
             Email
           </label>
           <input
@@ -41,17 +41,17 @@ const FormOne = () => {
         </div>
 
         {/* Digital Currency Platform & Amount Lost */}
-        <div className="flex gap-4">
-          <div className="w-1/2">
-            <label className="block mb-1 text-sm font-medium text-gray-700">
+        <div className="flex flex-col md:flex-row gap-4 items-center">
+          <div className="w-full md:w-1/2">
+            <label className="block mb-1 text-[0.7rem] md:text-sm font-medium text-gray-700">
               Digital Currency Platform
             </label>
             <select className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
               <option>Select Digital Currency Platform</option>
             </select>
           </div>
-          <div className="w-1/2">
-            <label className="block mb-1 text-sm font-medium text-gray-700">
+          <div className="w-full md:w-1/2">
+            <label className="block mb-1 text-[0.7rem] md:text-sm font-medium text-gray-700">
               Amount lost
             </label>
             <input
@@ -63,17 +63,17 @@ const FormOne = () => {
         </div>
 
         {/* Country & State */}
-        <div className="flex gap-4">
-          <div className="w-1/2">
-            <label className="block mb-1 text-sm font-medium text-gray-700">
+        <div className="flex flex-col md:flex-row gap-4 items-center">
+          <div className="w-full md:w-1/2">
+            <label className="block mb-1 text-[0.7rem] md:text-sm font-medium text-gray-700">
               Country
             </label>
             <select className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
               <option>Select country</option>
             </select>
           </div>
-          <div className="w-1/2">
-            <label className="block mb-1 text-sm font-medium text-gray-700">
+          <div className="w-full md:w-1/2">
+            <label className="block mb-1 text-[0.7rem] md:text-sm font-medium text-gray-700">
               State
             </label>
             <select className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">

@@ -5,7 +5,7 @@ const FormTwo = () => {
     const [summary, setSummary] = useState("");
     const [confirmed, setConfirmed] = useState(false);
   return (
-    <div className="space-y-6 p-6 rounded-md">
+    <div className="space-y-6  rounded-md">
       {/* Recovery Attempt */}
       <div className="border border-gray-300 rounded-md p-4">
         <p className="mb-2 text-sm font-medium text-gray-700">

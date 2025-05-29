@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const useMultistepForm = (steps, stepNames) => {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState();
 
   function next() {
     setCurrentStep((i) => {
@@ -17,6 +17,9 @@ const useMultistepForm = (steps, stepNames) => {
       return i - 1;
     });
   }
+  function goToStep(steps) {
+    setCurrentStep(steps);
+  }
 
   return {
     steps,
@@ -24,7 +27,7 @@ const useMultistepForm = (steps, stepNames) => {
     step: steps[currentStep],
     currentStep,
     stepNames,
-    previous,
+    goToStep,
   };
 };
 

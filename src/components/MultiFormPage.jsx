@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useState } from "react";
 import useMultistepForm from "../hooks/useMultistepForm";
 import ProgressBar from "./Progressbar";
 import Button from "./Button";
@@ -19,7 +19,7 @@ const MultiFormPage = ({
   error,
   setError,
 }) => {
-  const { steps, currentStep, next, step, stepNames, previous } =
+  const { steps, currentStep, next, step, stepNames, previous, goToStep } =
     useMultistepForm(stepContent);
 
   const submitHandler = (e) => {
@@ -33,12 +33,6 @@ const MultiFormPage = ({
   const Upload = (e) => {
     e.preventDefault();
     onSubmit();
-  };
-
-  const backHandler = (e) => {
-    e.preventDefault();
-    previous();
-    setError("");
   };
 
   console.log(currentStep);
@@ -64,12 +58,16 @@ const MultiFormPage = ({
             </div>
 
             <div className="flex justify-center">
-              {/* <ProgressBar
-                progress={steps.length}
+              <ProgressBar
+                steps={steps.length}
                 currentProgress={currentStep}
-              /> */}
+                onStepClick={goToStep}
+                className="mb-8"
 
-              <img src="/progress.png" />
+                // currentProgress={currentStep}
+              />
+
+              {/* <img src="/progress.png" /> */}
             </div>
 
             <div className={`${styles.tellUs}`}>

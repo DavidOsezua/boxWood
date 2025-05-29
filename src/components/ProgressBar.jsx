@@ -7,7 +7,7 @@ const ProgressBar = ({
   onStepClick = null,
   className = "",
 }) => {
-  const percentage = ((currentProgress  ) ) * 100;
+  const percentage = currentProgress * 100;
 
   return (
     <div className={`w-full max-w-md mx-auto ${className}`}>

@@ -51,7 +51,7 @@ const MultiFormPage = ({
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center max-w-[160px] mx-auto">
               <ProgressBar
                 steps={steps.length}
                 currentProgress={currentStep}
@@ -60,8 +60,6 @@ const MultiFormPage = ({
 
                 // currentProgress={currentStep}
               />
-
-              {/* <img src="/progress.png" /> */}
             </div>
 
             <div className={`${styles.tellUs}`}>

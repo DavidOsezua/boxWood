@@ -85,7 +85,7 @@ const MultiFormPage = ({
                   width={`w-full`}
                   colored
                   radius={`rounded-sm`}
-                  clickFunction={Upload}
+                  clickFunction={next}
                   type={`button`}
                   // svg2={<ArrowLeft />}
                 />

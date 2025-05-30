@@ -6,12 +6,12 @@ import FormTwo from "../components/FormTwo.jsx";
 
 const FormPage = () => {
   return (
-    <section className="pt-12 px-4 space-y-6">
+    <section className="pt-12 md:px-4 space-y-6">
       <div className="flex justify-center">
         <img src={logo} />
       </div>
 
-      <div className="bg-[#ffffff] border-[1px] border-[#F8F2F3] max-w-[770px] mx-auto py-6">
+      <div className="bg-[#ffffff] md:border-[1px] border-[#F8F2F3] max-w-[770px] mx-auto py-6">
         <MultiFormPage
           stepContent={[<FormOne key={1} />, <FormTwo key={2} />]}
         />

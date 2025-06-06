@@ -56,6 +56,7 @@ const Footer = () => {
                 +61 (1300) 580701 AUSTRALIA (FREEPHONE)
               </p>
               <p className="text-[0.9rem]">+1 (866) 519-2589 USA</p>
+              <p className="text-[0.9rem]">0207 459 4467 UK</p>
             </div>
           </div>
         </div>

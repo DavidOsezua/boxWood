@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 import Phone from "./SvgComponents/Phone";
 import Email from "./SvgComponents/Email";
@@ -26,6 +25,7 @@ const ContactUs = () => {
               +61 (1300) 580701 AUSTRALIA (FREEPHONE)
             </p>
             <p className="text-[0.8rem]">+1 (866) 519-2589 USA</p>
+            <p className="text-[0.9rem]">0207 459 4467 UK</p>
           </div>
         </div>
         <div className="flex gap-3 items-center">

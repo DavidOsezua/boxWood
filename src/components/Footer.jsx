@@ -47,12 +47,15 @@ const Footer = () => {
 
             <div>
               <p className="text-[1rem] font-bold">Email:</p>
-              <p className="text-[0.9rem]">management@boxwood-capital.co</p>
+              <p className="text-[0.9rem]">accounts@boxwood-cap.com</p>
             </div>
 
             <div>
               <p className="text-[1rem] font-bold">Call Us:</p>
-              <p className="text-[0.9rem]">+ 1 (833) 3074417</p>
+              <p className="text-[0.9rem]">
+                +61 (1300) 580701 AUSTRALIA (FREEPHONE)
+              </p>
+              <p className="text-[0.9rem]">+1 (866) 519-2589 USA</p>
             </div>
           </div>
         </div>

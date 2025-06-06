@@ -22,7 +22,10 @@ const ContactUs = () => {
 
           <div className="">
             <p className="font-bold pb-[0.5rem]">Phone Number</p>
-            <p className="text-[0.8rem]">+ 1 (833) 3074417</p>
+            <p className="text-[0.8rem]">
+              +61 (1300) 580701 AUSTRALIA (FREEPHONE)
+            </p>
+            <p className="text-[0.8rem]">+1 (866) 519-2589 USA</p>
           </div>
         </div>
         <div className="flex gap-3 items-center">
@@ -30,7 +33,7 @@ const ContactUs = () => {
 
           <div>
             <p className="font-bold pb-[0.5rem]">Email</p>
-            <p className="text-[0.8rem]">management@boxwood-capital.co</p>
+            <p className="text-[0.8rem]">accounts@boxwood-cap.com</p>
           </div>
         </div>
         <div className="flex gap-3 items-center">

@@ -1,6 +1,6 @@
 import { logo } from "../assets";
 import Download from "../components/SvgComponents/Download";
-import Left from "../components/SvgComponents/left";
+import Left from "../components/SvgComponents/Left";
 import DoubleLeft from "../components/SvgComponents/DoubleLeft";
 import DoubleRight from "../components/SvgComponents/DoubleRight";
 import Right from "../components/SvgComponents/Right";

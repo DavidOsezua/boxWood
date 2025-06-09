@@ -38,16 +38,16 @@ const Admin = () => {
           </div>
         </div>
         {/* Export and Search */}
-        <div className="flex gap-4 items-center justify-end">
-          <button className="flex gap-2 justify-center py-3 w-[150px] items-center bg-[#FF3344] text-white rounded">
+        <div className="flex flex-col md:flex-row justify-end w-full gap-4">
+          <button className="flex gap-2 justify-center py-3 text-sm w-full md:max-w-[150px]  items-center bg-[#FF3344] text-white rounded">
             {" "}
             <Download />
             Export (CSV)
           </button>
 
-          <div>
+          <div className="w-full md:max-w-[188px]">
             <input
-              className="border px-4 py-3 rounded"
+              className="border px-4 py-3 rounded w-full "
               placeholder="search..."
             />
           </div>

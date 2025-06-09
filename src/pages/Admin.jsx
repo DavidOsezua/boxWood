@@ -1,5 +1,3 @@
-import { section } from "framer-motion/client";
-import React from "react";
 import { logo } from "../assets";
 import Download from "../components/SvgComponents/Download";
 import Left from "../components/SvgComponents/left";

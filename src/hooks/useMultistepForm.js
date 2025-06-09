@@ -22,7 +22,7 @@ const useMultistepForm = (steps, stepNames) => {
   }
 
   return {
-    previous
+    previous,
     steps,
     next,
     step: steps[currentStep],

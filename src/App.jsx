@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Subcribe from "./components/Subcribe";
 import FormPage from "./pages/FormPage";
+import Admin from "./pages/Admin";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="ourservices" element={<Ourservices />} />
         <Route path="form" element={<FormPage />} />
+        <Route path="admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );

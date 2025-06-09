@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import MultiFormPage from "../components/MultiFormPage.jsx";
 import { logo } from "../assets/index.js";
 import FormOne from "../components/FormOne.jsx";
 import FormTwo from "../components/FormTwo.jsx";
 
 const FormPage = () => {
+  const [formData, setFormData] = useState({});
+
+  const validateStep = () => {};
+
+  const handleSubmit = () => {};
+
   return (
     <section className="pt-12 md:px-4 space-y-6">
       <div className="flex justify-center">

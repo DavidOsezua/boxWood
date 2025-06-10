@@ -1,19 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+
 import useMultistepForm from "../hooks/useMultistepForm";
 
 import Button from "./Button";
 import styles from "./MultiFormPage.module.css";
 import ProgressBar from "./ProgressBarr";
+import Left from "./SvgComponents/Left";
 
-const MultiFormPage = ({
-  stepContent,
-  sectionClass,
-  containerClass,
-  onSubmit,
-  validateStep,
-}) => {
-  const { steps, currentStep, next, step, stepNames, previous, goToStep } =
+const MultiFormPage = ({ stepContent, onSubmit, validateStep }) => {
+  const { steps, currentStep, next, step, previous, goToStep } =
     useMultistepForm(stepContent);
 
   const submitHandler = (e) => {
@@ -29,10 +24,10 @@ const MultiFormPage = ({
     onSubmit();
   };
 
-  console.log(currentStep);
+  // console.log(currentStep);
   return (
-    <section className={`${sectionClass} `}>
-      <div className={`${containerClass}`}>
+    <section className="">
+      <div className="">
         <div className={`${styles.formContainer} relative`}>
           <form className={`${styles.form} `}>
             <div className={`${styles.formHeader}`}>
@@ -71,7 +66,7 @@ const MultiFormPage = ({
 
               {currentStep === 1 ? (
                 <button onClick={previous} className="absolute top-0">
-                  {/* <ArrowLeft /> */}
+                  <Left />
                 </button>
               ) : (
                 ""
@@ -83,7 +78,7 @@ const MultiFormPage = ({
                   width={`w-full`}
                   colored
                   radius={`rounded-sm`}
-                  clickFunction={next}
+                  clickFunction={Upload}
                   type={`button`}
                   // svg2={<ArrowLeft />}
                 />
@@ -93,7 +88,7 @@ const MultiFormPage = ({
                   width={`w-full`}
                   colored
                   radius={`rounded-sm`}
-                  clickFunction={next}
+                  clickFunction={submitHandler}
                   type={`submit`}
                   //   svg={<ArrowRight />}
                 />

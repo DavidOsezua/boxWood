@@ -12,7 +12,7 @@ const useMultistepForm = (steps, stepNames) => {
   }
   function previous() {
     setCurrentStep((i) => {
-      if (i <= steps.length - 1);
+      if (i <= 0);
 
       return i - 1;
     });

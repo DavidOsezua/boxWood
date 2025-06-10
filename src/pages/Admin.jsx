@@ -414,7 +414,7 @@ const Admin = () => {
                     <td className="px-3 py-3">
                       {row.attempted_recovery === true ? "Yes" : "No"}
                     </td>
-                    <td className="px-3 py-3 flex items-center gap-2">
+                    <td className="px-3 py-3 flex justify-between items-center gap-2">
                       {row.loss_description}
                       <button className="bg-[#FFECEF] rounded-lg p-1 text-xs">
                         Read more

@@ -75,7 +75,7 @@ const FormPage = () => {
         Object.keys(formData).forEach((key) => {
           dataForm.append(key, formData[key]);
         });
-        await createComplain(dataForm);
+        await createComplain(formData);
 
         setFormData(initialData);
 

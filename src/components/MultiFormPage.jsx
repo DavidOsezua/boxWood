@@ -3,11 +3,18 @@
 import useMultistepForm from "../hooks/useMultistepForm";
 
 import Button from "./Button";
+import Loader from "./Loader";
 import styles from "./MultiFormPage.module.css";
 import ProgressBar from "./ProgressBarr";
 import Left from "./SvgComponents/Left";
 
-const MultiFormPage = ({ stepContent, onSubmit, validateStep }) => {
+const MultiFormPage = ({
+  stepContent,
+  onSubmit,
+  validateStep,
+  loading,
+  isSubmitting,
+}) => {
   const { steps, currentStep, next, step, previous, goToStep } =
     useMultistepForm(stepContent);
 
@@ -74,7 +81,15 @@ const MultiFormPage = ({ stepContent, onSubmit, validateStep }) => {
 
               {currentStep > 0 ? (
                 <Button
-                  text={`Submit`}
+                  text={
+                    loading ? (
+                      <span className="flex items-center gap-2">
+                        Submitting <Loader />
+                      </span>
+                    ) : (
+                      `Submit`
+                    )
+                  }
                   width={`w-full`}
                   colored
                   radius={`rounded-sm`}

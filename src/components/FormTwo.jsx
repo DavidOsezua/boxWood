@@ -82,16 +82,15 @@ const FormTwo = ({ formData, setFormData, errors = {} }) => {
           }
           className="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
         />
-
         <label htmlFor="confirmation" className="ml-2 text-sm text-gray-700">
           I certify that the information I have provided is mine and accurate.
         </label>
+        {errors.information_certified && (
+          <p className="text-red-500 text-sm mt-1">
+            {errors.information_certified}
+          </p>
+        )}
       </div>
-      {errors.information_certified && (
-        <p className="text-red-500 text-sm mt-1">
-          {errors.information_certified}
-        </p>
-      )}
     </div>
   );
 };

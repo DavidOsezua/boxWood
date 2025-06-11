@@ -1,0 +1,118 @@
+.spinner-3 {
+  width: 20px;
+  padding: 2px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+  visibility: visible;
+  opacity: 1;
+
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: s3 1s infinite linear;
+}
+@keyframes s3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+/* .spinner {
+    width: 50px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid #514b82;
+    
+    animation: s10-1 0.8s infinite linear alternate, s10-2 1.6s infinite linear;
+  }
+  @keyframes s10-1 {
+    0% {
+      clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+    }
+    12.5% {
+      clip-path: polygon(
+        50% 50%,
+        0 0,
+        50% 0%,
+        100% 0%,
+        100% 0%,
+        100% 0%,
+        100% 0%
+      );
+    }
+    25% {
+      clip-path: polygon(
+        50% 50%,
+        0 0,
+        50% 0%,
+        100% 0%,
+        100% 100%,
+        100% 100%,
+        100% 100%
+      );
+    }
+    50% {
+      clip-path: polygon(
+        50% 50%,
+        0 0,
+        50% 0%,
+        100% 0%,
+        100% 100%,
+        50% 100%,
+        0% 100%
+      );
+    }
+    62.5% {
+      clip-path: polygon(
+        50% 50%,
+        100% 0,
+        100% 0%,
+        100% 0%,
+        100% 100%,
+        50% 100%,
+        0% 100%
+      );
+    }
+    75% {
+      clip-path: polygon(
+        50% 50%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        50% 100%,
+        0% 100%
+      );
+    }
+    100% {
+      clip-path: polygon(
+        50% 50%,
+        50% 100%,
+        50% 100%,
+        50% 100%,
+        50% 100%,
+        50% 100%,
+        0% 100%
+      );
+    }
+  }
+  @keyframes s10-2 {
+    0% {
+      transform: scaleY(1) rotate(0deg);
+    }
+    49.99% {
+      transform: scaleY(1) rotate(135deg);
+    }
+    50% {
+      transform: scaleY(-1) rotate(0deg);
+    }
+    100% {
+      transform: scaleY(-1) rotate(-135deg);
+    }
+  }
+   */

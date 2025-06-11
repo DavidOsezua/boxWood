@@ -4,6 +4,8 @@ import { logo } from "../assets/index.js";
 import FormOne from "../components/FormOne.jsx";
 import FormTwo from "../components/FormTwo.jsx";
 import { createComplain } from "../services/apiForm.js";
+import Modal from "../components/Modal.jsx";
+import SuccessCard from "../components/SuccessCard.jsx";
 
 const FormPage = () => {
   const initialData = {
@@ -21,6 +23,8 @@ const FormPage = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState(initialData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const validateStep = (step) => {
     let errors = {};
@@ -50,7 +54,7 @@ const FormPage = () => {
     }
 
     if (step === 1) {
-      if (!formData.attempted_recovery || formData.attempted_recovery !== "yes")
+      if (!formData.attempted_recovery)
         errors.attempted_recovery = "This filed is required";
 
       if (!formData.loss_description || formData.loss_description.trim() === "")
@@ -67,21 +71,23 @@ const FormPage = () => {
   };
 
   const handleSubmit = async () => {
+    setIsLoading(true);
     if (validateStep(1)) {
-      console.log("Form Submitted", formData);
-
       try {
         const dataForm = new FormData();
         Object.keys(formData).forEach((key) => {
           dataForm.append(key, formData[key]);
         });
+
         await createComplain(formData);
-
+        setIsSubmitting(true);
         setFormData(initialData);
-
-        alert("Form submitted successfully");
+        setIsLoading(false);
+        console.log("Form Submitted", formData);
       } catch (e) {
         console.log(e.message);
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -94,6 +100,8 @@ const FormPage = () => {
 
       <div className="bg-[#ffffff] md:border-[1px] border-[#F8F2F3] max-w-[770px] mx-auto py-6">
         <MultiFormPage
+          isSubmitting={isSubmitting}
+          loading={isLoading}
           onSubmit={handleSubmit}
           validateStep={validateStep}
           stepContent={[
@@ -112,6 +120,16 @@ const FormPage = () => {
           ]}
         />
       </div>
+
+      {isSubmitting && (
+        <Modal modalHandler={() => setIsSubmitting(false)}>
+          <SuccessCard
+            close={() => {
+              setIsSubmitting(false);
+            }}
+          />
+        </Modal>
+      )}
     </section>
   );
 };

@@ -213,7 +213,13 @@ const Admin = () => {
   // States
   const [complaints, setComplaints] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredComplaints, setFilteredComplaints] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const filtered = complaints.filter((complaint) =>
+    Object.values(complaint).some((value) =>
+      String(value).toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
 
   // Handling side effect----Calling the endpoint to get all the complaints
   useEffect(() => {
@@ -221,18 +227,22 @@ const Admin = () => {
   }, []);
 
   // Filter complaints based on search term
-  useEffect(() => {
-    if (searchTerm.trim() === "") {
-      setFilteredComplaints(complaints);
-    } else {
-      const filtered = complaints.filter((complaint) =>
-        Object.values(complaint).some((value) =>
-          String(value).toLowerCase().includes(searchTerm.toLowerCase())
-        )
-      );
-      setFilteredComplaints(filtered);
-    }
-  }, [complaints, searchTerm]);
+  // useEffect(() => {
+  //   if (searchTerm.trim() === "") {
+  //     setFilteredComplaints(paginatedData);
+  //   } else {
+  //     setFilteredComplaints(filtered);
+  //   }
+  // }, [complaints, searchTerm, filtered,paginatedData]);
+
+  console.log(filtered);
+
+  const paginatedData = filtered.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const totalPages = Math.ceil(filtered.length / itemsPerPage);
 
   const fetchComplaints = async () => {
     try {
@@ -323,11 +333,30 @@ const Admin = () => {
 
   // Handle export button click
   const handleExportClick = () => {
-    const dataToExport =
-      filteredComplaints.length > 0 ? filteredComplaints : complaints;
+    const dataToExport = filtered.length > 0 ? filtered : complaints;
     const timestamp = new Date().toISOString().split("T")[0];
-    const filename = `complaints_export_${timestamp}.csv`;
+    const filename = `complaints-export-${timestamp}.csv`;
     exportToCSV(dataToExport, filename);
+  };
+
+  // Next and Double Next buttons
+  const handleNext = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const handleDoubleNext = () => {
+    if (currentPage + 2 <= totalPages) setCurrentPage(currentPage + 2);
+    else setCurrentPage(totalPages);
+  };
+
+  // Previous and Double Previous buttons
+  const handlePrevious = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const handleDoublePrevious = () => {
+    if (currentPage - 2 >= 1) setCurrentPage(currentPage - 2);
+    else setCurrentPage(1);
   };
 
   return (
@@ -339,8 +368,8 @@ const Admin = () => {
         </div>
 
         {/* Add Button and Summary */}
-        <div className="flex gap-4">
-          <button className=" border-dashed border-[2px] border-black px-3 py-7 w-[140px] h-[79px] rounded">
+        <div className="flex gap-4 w-full">
+          <button className=" border-dashed border-[2px] border-black px-2 py-7 w-[140px] h-[79px] rounded">
             + Add Currency
           </button>
 
@@ -396,10 +425,7 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-                {(filteredComplaints.length > 0
-                  ? filteredComplaints
-                  : complaints
-                ).map((row, i) => (
+                {paginatedData.map((row, i) => (
                   <tr key={i} className="border text-[#07111B]">
                     <td className="px-3 py-3">{i + 1}</td>
                     <td className="px-3 py-3">{row.full_name}</td>
@@ -434,27 +460,39 @@ const Admin = () => {
           )}
 
           {/* Show message if no search results */}
-          {filteredComplaints.length === 0 && searchTerm.trim() !== "" && (
+          {filtered.length === 0 && searchTerm.trim() !== "" && (
             <div className="text-center py-8 text-gray-500">
-              No results found for{searchTerm}
+              No results found for {searchTerm}
             </div>
           )}
 
           {/* Pagination */}
           <div className="flex justify-center items-center gap-2 mt-4 text-sm text-gray-600">
-            <button className="p-1 border rounded hover:bg-gray-100">
+            <button
+              className="p-1 border rounded hover:bg-gray-100"
+              onClick={handlePrevious}
+            >
               <Left />
             </button>
-            <button className="p-1 border rounded hover:bg-gray-100">
+            <button
+              className="p-1 border rounded hover:bg-gray-100"
+              onClick={handleDoublePrevious}
+            >
               <DoubleLeft />
             </button>
-            <span className="px-2">1</span>
+            <span className="px-2">{currentPage}</span>
             <span>of</span>
-            <span className="px-2">2</span>
-            <button className="p-1 border rounded hover:bg-gray-100">
+            <span className="px-2">{totalPages}</span>
+            <button
+              className="p-1 border rounded hover:bg-gray-100"
+              onClick={handleDoubleNext}
+            >
               <DoubleRight />
             </button>
-            <button className="p-1 border rounded hover:bg-gray-100">
+            <button
+              className="p-1 border rounded hover:bg-gray-100"
+              onClick={handleNext}
+            >
               <Right />
             </button>
           </div>

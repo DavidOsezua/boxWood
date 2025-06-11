@@ -6,7 +6,7 @@ const Modal = ({ children, modalHandler }) => {
   return ReactDom.createPortal(
     <>
       <div className={`${styles.overlay2}`} onClick={modalHandler}></div>
-      <div className={`z-[1000] w-full    max-w-[200px] ${styles.modal}`}>
+      <div className={`z-[1000]  min-w-[200px] ${styles.modal}`}>
         {children}
       </div>
     </>,

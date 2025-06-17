@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Subcribe from "./components/Subcribe";
 import FormPage from "./pages/FormPage";
 import Admin from "./pages/Admin";
+import SuccessPage from "./pages/SuccessPage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="ourservices" element={<Ourservices />} />
         <Route path="form" element={<FormPage />} />
+        <Route path="success" element={<SuccessPage />} />
         <Route path="admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>

@@ -6,6 +6,7 @@ import FormTwo from "../components/FormTwo.jsx";
 import { createComplain } from "../services/apiForm.js";
 import Modal from "../components/Modal.jsx";
 import SuccessCard from "../components/SuccessCard.jsx";
+import { useNavigate } from "react-router-dom";
 
 const FormPage = () => {
   const initialData = {
@@ -25,6 +26,8 @@ const FormPage = () => {
   const [formData, setFormData] = useState(initialData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const validateStep = (step) => {
     let errors = {};
@@ -83,6 +86,8 @@ const FormPage = () => {
         setIsSubmitting(true);
         setFormData(initialData);
         setIsLoading(false);
+        navigate("/success");
+
         console.log("Form Submitted", formData);
       } catch (e) {
         console.log(e.message);

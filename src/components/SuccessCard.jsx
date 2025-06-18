@@ -11,8 +11,8 @@ const SuccessCard = ({ close }) => {
         Submitted successfully
       </h3>
       <p>
-        Information under review, you will be notify via email to start your
-        claim.
+        A member of our recovery team will be in touch to arrange a discovery
+        call with you.
       </p>
     </div>
   );
